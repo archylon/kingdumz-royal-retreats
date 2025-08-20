@@ -175,7 +175,76 @@ const FredoniaPage = () => {
           </div>
         </section>
 
-        <BookingSection />
+        {/* Photo Gallery */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-4xl font-bold text-center text-foreground mb-12">
+                Property Gallery
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="lg:col-span-2 lg:row-span-2">
+                  <img 
+                    src={property.image} 
+                    alt="Main property view"
+                    className="w-full h-full object-cover rounded-lg shadow-lg"
+                  />
+                </div>
+                <div className="space-y-6">
+                  <img 
+                    src={property.image} 
+                    alt="Interior view 1"
+                    className="w-full h-48 object-cover rounded-lg shadow-lg"
+                  />
+                  <img 
+                    src={property.image} 
+                    alt="Interior view 2"
+                    className="w-full h-48 object-cover rounded-lg shadow-lg"
+                  />
+                </div>
+                <div className="md:col-span-2 lg:col-span-3">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {[1,2,3,4].map((i) => (
+                      <img 
+                        key={i}
+                        src={property.image} 
+                        alt={`Property view ${i}`}
+                        className="w-full h-32 object-cover rounded-lg shadow-lg"
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Direct Booking Section */}
+        <section className="py-20 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-bold text-foreground mb-4">
+                  Book Your Royal Stay
+                </h2>
+                <p className="text-xl text-muted-foreground">
+                  Book directly with us for the best rates and exclusive royal treatment
+                </p>
+              </div>
+              
+              <div className="bg-white rounded-xl shadow-xl overflow-hidden">
+                <iframe 
+                  id="booking-iframe" 
+                  sandbox="allow-top-navigation allow-scripts allow-same-origin" 
+                  style={{width: '100%', height: '900px'}} 
+                  frameBorder="0" 
+                  src="https://booking.hospitable.com/widget/9fa63366-8841-41ff-b4be-0f7c137036b4/1948422"
+                  title="Direct Booking Calendar"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>

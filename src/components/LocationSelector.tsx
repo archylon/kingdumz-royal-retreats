@@ -12,7 +12,7 @@ const LocationSelector = () => {
       name: "Los Angeles",
       kingdom: "The Kingdom of Fredonia",
       dragon: dragonFredonia,
-      url: "https://fredonia.kingdumz.com",
+      url: "/fredonia",
       description: "Royal retreat in the heart of Los Angeles",
       accent: "from-royal-purple to-royal-purple-light"
     },
@@ -21,14 +21,14 @@ const LocationSelector = () => {
       name: "New Zealand",
       kingdom: "The Kingdom of Karaka",
       dragon: dragonKaraka,
-      url: "https://karaka.kingdumz.com",
+      url: "/karaka",
       description: "Majestic estate in beautiful New Zealand", 
       accent: "from-emerald-600 to-emerald-400"
     }
   ];
 
-  const handleLocationSelect = (url: string) => {
-    window.location.href = url;
+  const handleLocationSelect = (path: string) => {
+    window.location.href = path;
   };
 
   return (
