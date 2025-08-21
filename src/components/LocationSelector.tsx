@@ -12,7 +12,7 @@ const LocationSelector = () => {
       name: "Los Angeles",
       kingdom: "The Kingdom of Fredonia",
       dragon: dragonFredonia,
-      url: "https://fredonia.kingdumz.com",
+      url: "/fredonia",
       description: "Royal retreat in the heart of Los Angeles",
       accent: "from-royal-purple to-royal-purple-light"
     },
