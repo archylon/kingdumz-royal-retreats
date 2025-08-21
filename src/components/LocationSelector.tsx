@@ -12,7 +12,7 @@ const LocationSelector = () => {
       name: "Los Angeles",
       kingdom: "The Kingdom of Fredonia",
       dragon: dragonFredonia,
-      url: "/fredonia",
+      url: "https://fredonia.kingdumz.com",
       description: "Royal retreat in the heart of Los Angeles",
       accent: "from-royal-purple to-royal-purple-light"
     },
@@ -21,7 +21,7 @@ const LocationSelector = () => {
       name: "New Zealand",
       kingdom: "The Kingdom of Karaka",
       dragon: dragonKaraka,
-      url: "/karaka",
+      url: "https://karaka.kingdumz.com",
       description: "Majestic estate in beautiful New Zealand", 
       accent: "from-emerald-600 to-emerald-400"
     }
@@ -43,7 +43,7 @@ const LocationSelector = () => {
             </h1>
           </div>
           <p className="text-xl md:text-2xl text-white/90 mb-4">
-            Choose Your Royal Destination
+            Where do you want to go?
           </p>
           <p className="text-white/70 max-w-2xl mx-auto">
             Select your preferred location to explore our luxury royal properties and begin your extraordinary journey
