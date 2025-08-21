@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, ArrowRight, Crown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import crownIcon from "@/assets/crown-icon.png";
 import dragonFredonia from "@/assets/dragon-fredonia.png";
 import dragonKaraka from "@/assets/dragon-karaka.png";
 
 const LocationSelector = () => {
+  const navigate = useNavigate();
+  
   const locations = [
     {
       id: "fredonia",
@@ -15,7 +18,8 @@ const LocationSelector = () => {
       url: "/fredonia",
       description: "Royal retreat in the heart of Los Angeles",
       accent: "from-royal-purple to-royal-purple-light",
-      glowColor: "shadow-royal-purple/20"
+      glowColor: "shadow-royal-purple/20",
+      isExternal: false
     },
     {
       id: "karaka", 
@@ -25,12 +29,17 @@ const LocationSelector = () => {
       url: "https://karaka.kingdumz.com",
       description: "Majestic estate in beautiful New Zealand", 
       accent: "from-emerald-600 to-emerald-400",
-      glowColor: "shadow-emerald-500/20"
+      glowColor: "shadow-emerald-500/20",
+      isExternal: true
     }
   ];
 
-  const handleLocationSelect = (path: string) => {
-    window.location.href = path;
+  const handleLocationSelect = (path: string, isExternal: boolean) => {
+    if (isExternal) {
+      window.location.href = path;
+    } else {
+      navigate(path);
+    }
   };
 
   return (
@@ -74,7 +83,7 @@ const LocationSelector = () => {
               <div 
                 key={location.id}
                 className="group cursor-pointer"
-                onClick={() => handleLocationSelect(location.url)}
+                onClick={() => handleLocationSelect(location.url, location.isExternal)}
               >
                 <div className="relative">
                   {/* Magical glow effect */}
